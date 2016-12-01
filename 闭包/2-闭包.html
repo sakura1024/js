@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+//        <!--在正常的脚本中，某个方法可以获取到外部的变量，或者全局变量 -->
+        var num = 11;
+        function func1(){
+            console.log(num);
+        }
+        func1();   //11
+
+//        <!-- 但是在外部是无法获取方法内部的局部变量的 -->
+        function func2(){
+            var num1 = 22;
+            num2 = 33;
+        }
+        func2();
+//        <!--console.log(num1);  会报错！-->
+        console.log(num2);  //<!--可以获取到num2的值，因为不适用var定义变量时，默认是全局变量 -->
+
+//        <!-- 那么如何在外部获取到内部的变量呢！javascript可以办到 -->
+        function func3(){
+            var num3 = 44;
+            function func4(){
+                return num3;
+            }
+            return func4;
+        }
+        var func = func3();
+        console.log(func());
+
+        </script>
+    </body>
+</html>

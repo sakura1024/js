@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>全局变量都是window对象的属性</h1>
+		<script type="text/javascript">
+			var x="this is window's property!";    //全局变量-->window对象的属性
+			var popup=function(){   
+				console.log(this.x);
+			}
+			var obj={};   //全局变量-->window对象的属性
+			obj.x=100;
+			obj.y=function(){
+				console.log(this.x);
+			}
+			obj.y();   //window.obj.y()--->this.x--->window.obj.x--->100
+			popup();   //window.popup(); --> this.x--->window.x --->this is window's property!
+		</script>
+	</body>
+</html>

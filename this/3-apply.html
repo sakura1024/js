@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="text" id="text" value="" />
+		<script type="text/javascript">
+			var oText=document.getElementById('text');
+		    function changeStyle(type,value){
+				return this.style[type]=value;
+			}
+		    changeStyle.apply(oText,["fontSize","100px"]);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var  obj  =   {    
+				x :  100,
+			    y :   function() {        
+				setTimeout(function() { 
+						console.log(this.x); //这里的this指向的是window对象，并不是我们期待的obj,所以会弹出undefined，
+						console.log(this);   //window：因为setTimeout是window的方法，所以这的this指向的是window对象
+					},  2000);    
+				}
+			};
+			obj.y();
+		</script>
+	</body>
+
+</html>

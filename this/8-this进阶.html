@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//仔细观察上面的例子,使用不同的引用来调用同一个函数时,this 指针永远是这个引用所属的对象
+			var  someuser  =   {     
+				name:   'byvoid',
+			     func:   function()  {        
+				console.log(this.name);     
+				}
+			}; 
+			var  foo  =   {     
+				name:   'foobar'
+			};
+
+			someuser.func();  // byvoid
+
+			foo.func  =  someuser.func;/*=function(){console.log(this.name);} */
+			foo.func();  // foobar
+
+			name  =  'global';
+			func  =  someuser.func; /*=function(){console.log(this.name);} */
+			func();  // 全局函数 this指向window  输出global
+		</script>
+	</body>
+
+</html>

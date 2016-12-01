@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+//			所有末定义直接赋值的变量自动声明为拥有全局作用域， 例如：
+			function  doSomething() {    
+				var  authorName = "山边小溪";    
+				blogName = "梦想天空";    
+				console.log(authorName);
+			}
+			doSomething();  //山边小溪
+			console.log(blogName);  //梦想天空
+			console.log(authorName);  //脚本错误
+			　　
+//			变量blogName拥有全局作用域， 而authorName在函数外部无法访问到。
+		</script>
+	</body>
+
+</html>

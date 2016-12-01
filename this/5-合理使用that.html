@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var  obj  =   {    
+				x :  100,
+			    y :   function() {   
+				var that=this;    //此时obj   
+				setTimeout(function() { 
+						console.log(that.x); //
+						console.log(that);
+						console.log(this);   //window：因为setTimeout是window的方法，所以这的this指向的是window对象
+					},  2000);    
+				}
+			};
+			obj.y();
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>理财</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script>!function(a,b){function s(){var c,b=d.getBoundingClientRect().width;b/g>540&&(b=540*g),c=b/10,d.style.fontSize=c+"px",j.rem=a.rem=c}var i,k,l,m,n,p,q,r,c=a.document,d=c.documentElement,e=c.querySelector('meta[name="viewport"]'),f=c.querySelector('meta[name="flexible"]'),g=0,h=0,j=b.flexible||(b.flexible={});e?(console.warn("将根据已有的meta标签来设置缩放比例"),k=e.getAttribute("content").match(/initial\-scale=([\d\.]+)/),k&&(h=parseFloat(k[1]),g=parseInt(1/h))):f&&(l=f.getAttribute("content"),l&&(m=l.match(/initial\-dpr=([\d\.]+)/),n=l.match(/maximum\-dpr=([\d\.]+)/),m&&(g=parseFloat(m[1]),h=parseFloat((1/g).toFixed(2))),n&&(g=parseFloat(n[1]),h=parseFloat((1/g).toFixed(2))))),g||h||(a.navigator.appVersion.match(/android/gi),p=a.navigator.appVersion.match(/iphone/gi),q=a.devicePixelRatio,g=p?q>=3&&(!g||g>=3)?3:q>=2&&(!g||g>=2)?2:1:1,h=1/g),d.setAttribute("data-dpr",g),e||(e=c.createElement("meta"),e.setAttribute("name","viewport"),e.setAttribute("content","initial-scale="+h+", maximum-scale="+h+", minimum-scale="+h+", user-scalable=no"),d.firstElementChild?d.firstElementChild.appendChild(e):(r=c.createElement("div"),r.appendChild(e),c.write(r.innerHTML))),a.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(s,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(i),i=setTimeout(s,300))},!1),"complete"===c.readyState?c.body.style.fontSize=12*g+"px":c.addEventListener("DOMContentLoaded",function(){c.body.style.fontSize=12*g+"px"},!1),s(),j.dpr=a.dpr=g,j.refreshRem=s,j.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},j.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window["lib"]||(window["lib"]={}));</script><script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://res.baorendai.com/qb/polyfill.min.js"></script>
+    <script src="js/commons.js"></script>
+    <!-- 理财-->
+    <link href="css/licai.css" rel="stylesheet"/>
+    <script>
+      var appId       = 'wx9ebe62299c9a74ee';
+      var timestamp   = '1456191040';
+      var nonceStr    = 'NKzlxrmr2jjDqTHg';
+      var signature   = '7683af589c1cbb1065f0a2f3adf043564006a83b'
+      var is_wx_browser = 0;
+      var img_host = 'http://pic.baorendai.cn';
+      
+      
+    </script>
+    <!-- baidu 统计-->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+         var hm = document.createElement("script");
+         hm.src = "//hm.baidu.com/hm.js?3eabf7ccf7ab07116b0ca3565d9357fb";
+         var s = document.getElementsByTagName("script")[0]; 
+         s.parentNode.insertBefore(hm, s);
+      })();
+      
+      
+      
+      
+    </script>
+  </head>
+  <body>
+    <style>
+      a {text-decoration: none; color: black;}
+      a:hover {color: red}
+      .wrap {width:900px;height: 300px; overflow-y: auto; margin: auto;}
+      table {width:800px; border: 1px solid black; border-collapse;}
+      th {background: orange;}
+      td,th {border: 1px solid black;text-align: center;}
+      table input[type=text] {width: 100px;}
+    </style>
+    <script>
+      var yugi = {
+          col: 6,
+          addRow: function(table) {
+              var vals = [a.value, b.value, c.value, d.value, e.value,"<a href='###' onclick='yugi.modify(table,this)'>修改</a> <a href='###' onclick='yugi.del(table,this)'>删除</a>"];
+              var tr = table.insertRow(table.tBodies[0].rows.length);
+              for (var i=0;i < yugi.col;i++) {
+                  var td = tr.insertCell(tr.cells.length);
+                  td.innerHTML = vals[i];
+              }
+          },
+          modify: function(table,row) {
+              var r = row.parentElement.parentElement,
+                  c = r.cells;
+//            if (/*.修改.*/g.test(row.innerHTML)) {    错误的
+//			if (/修改/g.test(row.innerHTML)) {   正确
+              if (row.innerHTML=="修改") {
+              	  console.log(row.innerHTML)
+                  for(var i = 0;i < c.length - 1;i++) {
+                      var ci = c[i];
+                      var txt = document.createElement("input");
+                      txt.type = "text";
+                      txt.value = ci.innerHTML;
+                      ci.innerHTML = "";
+                      ci.appendChild(txt);
+                  }
+                  row.innerHTML = "保存";
+              }else {
+                  for (var i = 0;i < c.length - 1;i++) {
+                      var ci = c[i];
+                      ci.innerHTML = ci.children[0].value;
+                  }
+                  row.innerHTML = "修改";
+              }
+          },
+          del: function(table,row) {
+              var ind = row.parentElement.parentElement.rowIndex;
+                  table.tBodies[0].deleteRow(ind);
+          }
+      }
+    </script>
+    <div class="m-container">
+      <fieldset class="wrap">
+        <legend>卡希个性栏</legend>
+        <div>
+          <input type="text" id="a"/>
+          <input type="text" id="b"/>
+          <input type="text" id="c"/>
+          <input type="text" id="d"/>
+          <input type="text" id="e"/>
+          <input type="button" value="添加" onclick="yugi.addRow(table)"/>
+        </div>
+        <table id="table">
+          <tr>
+            <th>个性脾气</th>
+            <th>人品质量</th>
+            <th>滚犊子吧</th>
+            <th>性取向呢</th>
+            <th>第一印象</th>
+            <th>留下足迹</th>
+          </tr>
+        </table>
+      </fieldset>
+    </div>
+  </body>
+</html>

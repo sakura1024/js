@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fun(){
+				var name="我是函数局部变量";
+				function fun1(){
+					return name;
+				}
+				return fun1;
+			}
+			var end=fun();
+			var end1=end();
+			console.log(end1);
+		</script>
+	</body>
+</html>

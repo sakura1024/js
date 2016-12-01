@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function  lazy_sum(arr)  {  
+				var sum = function() {
+					return  arr.reduce(function (x,  y)  {        
+						return  x  +  y;    
+					});
+				}  
+				return sum;
+			}
+
+			var total = lazy_sum([1,  2,  3,  4,  5]);
+			var total2 = lazy_sum([1,  2,  3,  4,  5]); 
+			console.log(total);
+			console.log(total2);
+			console.log(total===total2);  //false
+			console.log(total());// 15
+		</script>
+	</body>
+
+</html>

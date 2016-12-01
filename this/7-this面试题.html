@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var  a = 10;   
+			function  test() {        
+				a = 5;    //局部变量  5 
+				console.log(a);     //5    
+				console.log(this.a);   //   
+				var  a;        
+				console.log(this.a);   //
+				console.log(a);   //5  
+			}
+			test();     //调用函数 全局函数 this指向window this.a=10     5 10 10 5   
+			new  test();    //构造函数  this指向新生成的对象  由于构造函数内没有定义this.a 所以this.a=undefined   5 undefined undefined 5 
+			console.log(a);  //10
+			/*
+			 * 简单的解释为：
+
+		　　1.JavaScript的作用域是函数作用域，定义在函数中的参数和变量在函数外部是不可见的，而且在一个函数中的任何位置定义的变量在函数的任何地方都可见。
+		
+		　　2.this取决于函数调用的模式：
+		
+		　　　　（1）当调用某个对象的方法时，this被绑定到该对象。
+		
+		　　　　（2）当调用全局函数时，this被绑定到全局对象（浏览器中为window对象）。
+		
+		　　　　（3）当函数作为构造函数，使用new操作符生成新对象时，this被绑定到该新对象。
+		
+		　　　　（4）当执行call/apply方法是，this被绑定到call/apply方法的第一个参数和。
+			 */
+		</script>
+	</body>
+</html>
