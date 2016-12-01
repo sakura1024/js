@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+//			将n维数组破开成一维(string - array)
+			var foo0 = [1, [2, 3],[4, 5, [6, 7, [8]]],[9], 10];
+
+			var foo1 = foo0.join(',').split(',');
+
+			console.log(foo1); //["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+
+//			作者： 许小言
+//			链接： https: //www.zhihu.com/question/46943112/answer/115665473
+//				来源： 知乎
+//			著作权归作者所有， 转载请联系作者获得授权。
+		</script>
+	</body>
+
+</html>

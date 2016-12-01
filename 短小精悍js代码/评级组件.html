@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul li{list-style: none;display: flex;justify-content: space-between;width: 300px;background: blue;}
+			ul li span{display: block;}
+			ul li span:first-child{flex: 2;background: red;}
+			ul li span:last-child{flex: 4;background: yellow;text-align: right;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span style="flex: 8;">fdjfjlas1233333333334</span>
+				<span>faskflask</span>
+			</li>
+			<li>
+				<span>fdjfjlas</span>
+				<span>faskflask</span>
+			</li>
+		</ul>
+		<script type="text/javascript">
+		/*法一
+		function rank(rate){
+			var str="★★★★★☆☆☆☆☆";
+			console.log(str.slice(5 - rate, 10 - rate)); 
+		}
+			rank(1);
+			*/
+			//法二
+			function rank(rate){
+			var str="★★★★★☆☆☆☆☆";
+//			console.log(str.substr(5 - rate, 5)); 
+			console.log(str.substring(5 - rate, 10 - rate)); 
+		}
+			rank(1);
+		</script>
+	</body>
+</html>
