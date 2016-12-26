@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="input" value="输入框改变时，文字变色" /><br /><br /><br />
+		<textarea name="" rows="" cols="" id="textarea">
+			输入框改变时，文字变色
+		</textarea><br />
+		<h6>select框改变时，文字变色</h6>
+		<select name="" id="select">
+			<option value="1">111</option>
+			<option value="2">222</option>
+			<option value="3">333</option>
+		</select>
+	</body>
+	<script type="text/javascript">
+		var oInput=$('input');
+		var oTextarea=$('textarea');
+		var oSelect=$('select');
+		oSelect.val(3);
+		console.log(oSelect.find('option:selected').text())
+		oInput.change(function(){
+			$(this).css('color','red');
+		});
+		oTextarea.change(function(){
+			$(this).css('color','red');
+		});
+		oSelect.change(function(){
+			$(this).css('color','red');
+		});
+		
+	</script>
+</html>
