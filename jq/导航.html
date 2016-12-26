@@ -5,32 +5,43 @@
 		<title></title>
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<style type="text/css">
-			ul li{list-style: none;display:inline-block;padding: 10px 20px;border-bottom: 1px solid #ccc;}
-			ul{
+			ul li{list-style: none;}
+			.mtab li{display:inline-block;padding: 10px 20px;border-bottom: 1px solid #ccc;}
+			.mtab{
 				word-spacing: -5px;
 			}
-			.active{border: 1px solid #ccc;border-bottom: transparent;}
+			.mtab .active{border: 1px solid #ccc;border-bottom: transparent;}
+			.tab_con  li{display: none;}
+			.tab_con .active{display: block;}
 		</style>
 	</head>
 	<body>
-		<ul >
+		<ul class="mtab">
 			<li class="active">1</li>
 			<li>2</li>
 			<li>3</li>
 			<li>4</li>
 		</ul>
+		<ul class="tab_con">
+			<li class="active">第一页</li>
+			<li>第二页</li>
+			<li>第三页</li>
+			<li>第四页</li>
+		</ul>
+		
 	</body>
 	<script type="text/javascript">
 		
-		$('ul').on('click','li',function(){
+		$('.mtab').on('click','li',function(){
 			var $this=$(this);
 			if ($this.hasClass('active')) {
 				$this.removeClass('active');
 			} else{
 				$this.parent().children().removeClass('active');
-				$this.addClass('active')
+				$this.addClass('active');
+				$('.tab_con li').removeClass('active');
+				$('.tab_con li').eq($this.index()).addClass('active');
 			}
-			
 		});
 	</script>
 </html>
