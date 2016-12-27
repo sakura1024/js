@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<style type="text/css">
+			body {
+				margin: 10px;
+			}
+			
+			label {
+				padding: 5px 10px;
+				border: 1px solid #ccc;
+				margin: 15px;
+			}
+			
+			.active {
+				background: cornflowerblue;
+			}
+			input{display: none;}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row par">
+				<label><input type="checkbox" name="" id="" value="选项一" /></label>
+				<label><input type="checkbox" name="" id="" value="选项二" /></label>
+				<label><input type="checkbox" name="" id="" value="选项三" /></label>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$('.par').on('click', 'input', function(e) {
+			var $this = $(this);
+			if($this.prop("checked")) {
+				$this.parent().addClass('active');
+			} else{
+				$this.parent().removeClass('active');
+			}
+		});
+	</script>
+
+</html>
