@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[1,2,3,3,1,8,7,2,9,4,5,1,6]
+			for (var i = 0; i < arr.length-1; i++) {
+				for (var j=i+1; j <= arr.length-1; j++) {
+					//数组中的每个元素和自己后面的元素做比较，一旦遇到相同的，
+					//后面重复的那个元素的后面的元素依次被后面的元素覆盖，并且数组长度减一
+					if(arr[i]==arr[j]){
+						for (var w = j; w < arr.length; w++) {
+							arr[w]=arr[w+1];
+						}
+						arr.length=arr.length-1;
+					}
+				}
+			}
+			console.log(arr);
+//			例如:var arr=[1,2,3,3,1,8,7,2,9,4,5,1,6]；当a[4]==a[0]时,a[4]被覆盖,数组长度减一,覆盖后的数组为:
+//			var arr=[1,2,3,3,8,7,2,9,4,5,1,6];   注意现在a[4]=8;不再是之前的1了,当然a[4]后面的元素依次都往前移动了一个长度
+		</script>
+	</body>
+</html>
